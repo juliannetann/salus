@@ -27,25 +27,29 @@
                       <a class="nav-link dropdown-toggle nav-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Features
                       </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Calorie Tracker</a>
-                        <a class="dropdown-item" href="#">Meal Plan</a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Calorie Tracker</a></li>
+                        <li><a class="dropdown-item" href="#">Meal Plan</a></li>
                         <!-- <div class="dropdown-divider"></div> -->
-                        <div class="btn-group dropright">
+                        <li class="dropdown-submenu">
+                            <div class="btn-group dropright" href="#">
                                 <button type="button" class="btn btn-secondary" id="suggestions">
                                   Suggestions
                                 </button>
+                                
                                 <button type="button" id="toggle-dropright" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   <span class="sr-only">Toggle Dropright</span>
                                 </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropright-item" href="#">foods</a>
-                                    <a class="dropright-item" href="#">sports</a>
-                                    <a class="dropright-item" href="#">Something else here</a>
-                                </div>
-                              </div>
+                            </div>
+                                <ul class="dropdown-menu" >
+
+                                    <li><a class="dropright-item" href="#">foods</a></li>
+                                    <li><a class="dropright-item" href="#">sports</a></li>
+                                </ul>
+                              
+                        </li>
                         
-                      </div>
+                    </ul>
                     </li>
                     <!-- <li class="nav-item">
                       <a class="nav-link disabled nav-header" href="#" id="disabled">Disabled</a>
@@ -58,8 +62,47 @@
                   </form>
                 </div>
               </nav>
+              <div id="demo" class="carousel slide" data-ride="carousel">
+                                      
+                  <ul class="carousel-indicators">
+
+                      <li data-target="#demo" data-slide-to="0" class="active"></li>
+                      <li data-target="#demo" data-slide-to="1"></li>
+                      <li data-target="#demo" data-slide-to="2"></li>
+                  </ul>
+
+                  <div class="carousel-inner">
+                    <div class="carousel-item active text-center">
+                        <img src="first-pic.png" id="healthy-food" alt="">
+                    </div>
+                    <div class="carousel-item">
+                            <img src="https://engie.com.au/wp-content/uploads/slider-51_1440x500-1.jpg" id="tai-chi-in-the-park" alt="tai chi in the park">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://biztechmagazine.com/sites/biztechmagazine.com/files/styles/cdw_hero/public/articles/201811/GettyImages-649618834.jpg?itok=ufEXnib7" id="" alt="">
+                    </div>
+                    <div class="centered" id="salus-centre">SALUS</div>
+                    <div class="centered" id="description-salus">An A.I. empowered mobile nutritionist</div>
+                  </div>
+                  <a href="#demo" data-slide="prev" class="carousel-control-prev">
+                      <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a href="#demo" data-slide="next" class="carousel-control-next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                    
+              </div>
 
     </div>
+    <div id="description-home">Serves the:</div>
+    <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="general-public-icon.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">General Public</h5>
+              <p class="card-text">People who are looking to lead healthier lives would be helped if they are privy to the calories and nutrition of foods they consume daily. The conventional ways of getting this information often rely on nutritional labels or pure guesswork. This can be tedious and often misleading due to the lack of transparency with most food options.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
