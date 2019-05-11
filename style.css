@@ -6,9 +6,11 @@
     letter-spacing: 1cm
 }
 
-#nutrition {
+#button {
     color: darkgreen;
     width: 5cm;
-    height: 20px;
-    text-align: center
+    height: 1cm;
+    text-align: center;
+    margin-right: 3cm;
+    margin-top: 10px
 }
