@@ -1,5 +1,14 @@
 #title {
     font-size: 6em;
-    font-family: Helvetica, serif;
-     border: 1cm, black
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 1cm, black;
+    color: darkgreen;
+    letter-spacing: 1cm
+}
+
+#nutrition {
+    color: darkgreen;
+    width: 5cm;
+    height: 20px;
+    text-align: center
 }
