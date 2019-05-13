@@ -10,7 +10,7 @@
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#" id="navbar-name">SALUS</a>
+                <a class="navbar-brand" href="index.html" id="navbar-name">SALUS</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -18,7 +18,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="#" id="home"><b>Home</b><span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="index.html" id="home"><b>Home</b><span class="sr-only">(current)</span></a>
                     </li>
                     <!-- <li class="nav-item">
                       <a class="nav-link" href="#" id="Diabetic">Diabetic</a>
@@ -94,15 +94,16 @@
               </div>
 
     </div>
+    <div class="lined-border"></div>
     <div id="description-home">SERVES THE:</div>
     <div style="display: flex; justify-content: space-around">
     <div style="display: inline">
-        <div class="card" style="width: 25rem;" style="display: inline">
+        <div class="card" style="width: 25rem; margin-left: 100px" style="display: inline">
             <img class="card-img-top" id="general-public" src="general-public-icon.png" alt="Card image cap">
             <div class="card-body">
             <h5 class="card-title" style="color: #347037; letter-spacing: 3px">General Public</h5>
             <p class="card-text">People who are looking to lead healthier lives would be helped if they are privy to the calories and nutrition of foods they consume daily. The conventional ways of getting this information often rely on nutritional labels or pure guesswork. This can be tedious and often misleading due to the lack of transparency with most food options.</p>
-            <a href="#" class="btn btn-primary">More</a>
+            <a href="generalpublic.html" class="btn btn-primary more" id="general-btn">More</a>
             </div>
         </div>
     </div> 
@@ -112,23 +113,53 @@
             <div class="card-body">
                 <h5 class="card-title" style="color: #347037; letter-spacing: 3px">Elderly</h5>
                 <p class="card-text">It is often the case with elderly people to forget when or if they have taken their medication. This could potentially lead to dire situations as they can either retake their medicine which can result in an overdose, or not take their medicine at all and risk falling sick. Elderly people may also have varying conditions which necessitate specific diets for them to stay healthy, making it all the more important for them to know the nutrition of foods they consume. </p>
-                <a href="#" class="btn btn-primary">More</a>
+                <a href="elderly.html" class="btn btn-primary more">More</a>
             </div>
         </div>
     </div>   
     <div style="display: inline">
-            <div class="card" style="width: 25rem ;" style="display: inline">
-                <img class="card-img-top" id="diabetic" src="screen.png" alt="Card image cap">
+            <div class="card" style="width: 25rem; margin-right: 100px" style="display: inline">
+                <img class="card-img-top;" id="diabetic" src="screen.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title" style="color: #347037; letter-spacing: 3px">Diabetic People</h5>
                     <p class="card-text">Around 1 in 9 Singaporeans suffer from diabetes, and we are in urgent need of mitigating said issue. Diabetic people tend to struggle to find appropriate foods to eat as it is hard for them to know the sugar content in foods they consume - especially when food served in restaurants and cafes do not have nutrition labels. </p>
-                    <a href="#" class="btn btn-primary">More</a>
+                    <a href="diabetes.html" class="btn btn-primary more">More</a>
                 </div>
             </div>
         </div>   
     </div>
-    <div id="lined-border"></div>
-        
+    <div class="lined-border"></div>
+    <div class="purpose-box">
+            <h1 class="purpose">OUR MISSION</h1>
+            <div class="lined-border2"></div>
+        <div class="sections">
+            <div class="purpose-body">Salus addresses two issues in Singapore, an ageing population and diabetes. Diabetes is becoming more and more common, accounting for 10% of all diseases in Singapore. People are becoming increasingly sedentary. Leading a healthy lifestyle has never been more important. With the help of Salus, making decisions to lead a better and healthier lifestyle will be made easier.</div>
+            <img id="cafe-pic" src="cafe-photo-mission.jpg" alt="cafe-photo-mission">
+        </div>
+    </div>
+    <div class="lined-border"></div> 
+    <div class="features">
+        <h1 id="features-header">FEATURES</h1>
+        <div class="sections">
+            <img id="features-pic" src="" alt="features picture">
+            <div id="features-text"></div>
+        </div>
+        <div id="features-people">
+            <div class="features-card">
+                <div class="features-people-header">General Public</div>
+                <div class="features-people-text"></div>
+            </div>
+            <div class="features-card">
+                <div class="features-people-header">Elderly</div>
+                <div class="features-people-text"></div>
+            </div>
+            <div class="features-card">
+                <div class="features-people-header">Diabetic</div>
+                <div class="features-people-text"></div>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
