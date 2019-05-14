@@ -1,4 +1,12 @@
 
+/* html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+} */
+
 .navbar {
     background-color: #347037
 }
@@ -87,7 +95,22 @@
     letter-spacing: 1px;
     margin-left: 20px;
     margin-right: 20px;
-    display: inline
+    display: inline;
+
+    
+    
+}
+
+.card-body{
+    min-height: 441px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius:4px;
+
+}
+
+.btn.btn-primary.more{
+    margin-bottom: 15px
     
 }
 
@@ -188,3 +211,9 @@
 #features-people {
     display: flex; justify-content: space-around
 }
+
+.container{
+    display: flex; 
+    justify-content: space-around;
+}
+
