@@ -1,12 +1,4 @@
 
-/* html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-} */
-
 .navbar {
     background-color: #347037
 }
@@ -95,22 +87,7 @@
     letter-spacing: 1px;
     margin-left: 20px;
     margin-right: 20px;
-    display: inline;
-
-    
-    
-}
-
-.card-body{
-    min-height: 441px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius:4px;
-
-}
-
-.btn.btn-primary.more{
-    margin-bottom: 15px
+    display: inline
     
 }
 
@@ -172,11 +149,17 @@
     line-height: 40px
 }
 
+.container{
+    display: flex; 
+    justify-content: space-around;
+}
+
 .more {
     width: 6cm;
     top: -10%;
     left: -30%;
     transform: translate(30%, 10%);
+    color: #347037
 }
 
 .sections {
@@ -208,12 +191,44 @@
     padding-left: 100px
 }
 
+#features-pic {
+    padding-bottom: 40px;
+    width: 1440px;
+    height:200px
+}
+
 #features-people {
     display: flex; justify-content: space-around
 }
 
-.container{
-    display: flex; 
-    justify-content: space-around;
+.features-people-header {
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 30px
+}
+
+.features-people-subheading {
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px
+}
+
+.features-people-text {
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.features-card {
+    width: 10cm;
+    background-color: #347037;
+    color: white
 }
 
