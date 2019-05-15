@@ -5,6 +5,52 @@
 
 */
 
+// let now = new Date()
+        // let parentKey = now.toDateString() + now.toTimeString()
+        // let photoKey = parentKey + guid()
+
+        // s3.headObject({Key:parentKey}, function (err,data) {
+        //     if(!err){
+
+        //     }
+        //     if (err.code !== 'NotFound') {
+        //         return alert('There was an error creating your album: ' + err.message);
+        //     }
+        //     s3.putObject({Key: parentKey}, function(err, data) {
+        //         if (err) {
+        //           return alert('There was an error creating your album: ' + err.message);
+        //         }
+        //         alert('Successfully created a new album.');
+            
+        // })
+
+// var albumBucketName = 'test-camera-app';
+// var bucketRegion = 'us-east-1';
+// var IdentityPoolId = 'us-east-1:dd7eed13-39e5-4e67-ad47-ab7a04630936';
+
+// AWS.config.update({
+//   region: bucketRegion,
+//   credentials: new AWS.CognitoIdentityCredentials({
+//     IdentityPoolId: IdentityPoolId
+//   })
+// });
+
+
+
+// var s3 = new AWS.S3({
+//   apiVersion: '2006-03-01',
+//   params: {Bucket: albumBucketName}
+// });
+
+// function guid() {
+//     function s4() {
+//       return Math.floor((1 + Math.random()) * 0x10000)
+//         .toString(16)
+//         .substring(1);
+//     }
+//     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+//       s4() + '-' + s4() + s4() + s4();
+//   }
 var takeSnapshotUI = createClickFeedbackUI();
 
 var video;
@@ -222,6 +268,9 @@ function takeSnapshot() {
     getCanvasBlob(canvas).then(function(blob) {
 
         // do something with the image blob
+        console.log(blob)
+
+
 
     });
 
