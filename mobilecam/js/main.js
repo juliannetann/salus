@@ -252,7 +252,7 @@ function takeSnapshot() {
     canvas.height = height;
 
     context = canvas.getContext('2d');
-    context.drawImage(video, 0, 0, width, height);
+    context.drawImage(video, 0, 0, 50, 50);
 
     // polyfil if needed https://github.com/blueimp/JavaScript-Canvas-to-Blob
     
@@ -265,13 +265,57 @@ function takeSnapshot() {
     }
 
     // some API's (like Azure Custom Vision) need a blob with image data
-    getCanvasBlob(canvas).then(function(blob) {
+    getCanvasBlob(canvas)
+    .then(function(blob) {
+    //     console.log(URL.createObjectURL(blob))
+    //     // do something with the image blob
+    //     let reader = new FileReader();
+    //     reader.readAsDataURL(blob); 
+        
+    //     function readerComplete(reader) {
+    //         return new Promise(function(resolve,reject){
+    //             reader.onloadend = resolve
+    //         })
+    //     }
+        
+    //     return readerComplete(reader)
+    // })
+    // .then( function (progressEvent) {
+    //     console.log(progressEvent.currentTarget.result)
+    //     return progressEvent.currentTarget.result                
+    // })
+    // .then(function (base64) {
+        
+        let formData = new FormData()
+        formData.append("media",blob,'blob.jpeg')
 
-        // do something with the image blob
-        console.log(blob)
+        let options = {
+            method:"POST",
+            body: formData,
+            
+        }
 
+        // delete options.headers["Content-Type"]
+        
+        return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition?user_key=ab4dc23f37455ad57e36eee48e77e644`,{
+            method: "POST",
+            // headers: {
+            //     "Content-Type": "multipart/form-data",
+            // },
+            body: formData
+            
 
-
+        })
+        
+    })
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(data) {
+        console.log(data)
+    })
+    .catch(function(err) {
+        console.log(err)
     });
 
 }
