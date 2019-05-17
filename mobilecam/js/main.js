@@ -297,7 +297,7 @@ function takeSnapshot() {
 
         // delete options.headers["Content-Type"]
         
-        return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=ab4dc23f37455ad57e36eee48e77e644`,{
+        return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=`,{
             method: "POST",
             // headers: {
             //     "Content-Type": "multipart/form-data",
