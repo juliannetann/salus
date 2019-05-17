@@ -202,7 +202,7 @@
     letter-spacing: 5px;
     padding: 20px;
     color: #347037;
-    padding-left: 100px
+    padding-left: 100px;
 }
 
 #features-pic {
@@ -212,7 +212,8 @@
 }
 
 #features-people {
-    display: flex; justify-content: space-around
+    display: flex; 
+    justify-content: space-around;
 }
 
 .features-people-header {

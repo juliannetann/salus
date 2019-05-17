@@ -248,11 +248,11 @@ function takeSnapshot() {
     var width = video.videoWidth;
     var height = video.videoHeight;
 
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = 530;
+    canvas.height = 530;
 
     context = canvas.getContext('2d');
-    context.drawImage(video, 0, 0, 50, 50);
+    context.drawImage(video, 0, 0, 530, 530);
 
     // polyfil if needed https://github.com/blueimp/JavaScript-Canvas-to-Blob
     
@@ -297,7 +297,7 @@ function takeSnapshot() {
 
         // delete options.headers["Content-Type"]
         
-        return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition?user_key=`,{
+        return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=ab4dc23f37455ad57e36eee48e77e644`,{
             method: "POST",
             // headers: {
             //     "Content-Type": "multipart/form-data",
