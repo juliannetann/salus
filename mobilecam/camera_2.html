@@ -6,26 +6,43 @@
   <meta name="keywords" content="HTML,CSS,JavaScript, WebRTC, Camera">
   <meta name="author" content="Kasper Kamperman">
   <title>Salus Camera</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style_camera2.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
 </head>
-<body>
-  <div id="container">
-    <div id="vid_container">
-        <video id="video" autoplay playsinline></video>
-        <div id="video_overlay"></div>
-        <img src="" id="img_overlay">
-        
-    </div>
-    <div id="gui_controls">
-        <div id="gui_descriptor">
-          Take a picture of your food!
+<body style="margin: 0px">
+  <div id="main">
+  <div id="box">
+    <div id="title">YOUR PHOTO:</div>
+    <div id="box2">
+      <div class="section">
+        <div class="question">
+          <div class="subheading">Please select which type food it is:</div>
+          <div class="text">
+              <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle food_type" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">---</a>
+                    <a class="dropdown-item" href="#">---</a>
+                    <a class="dropdown-item" href="#">---</a>
+                  </div>
+                </div>
+          </div>
         </div>
-        <button id="switchCameraButton" name="switch Camera" type="button" aria-pressed="false"></button>
-        <button id="takePhotoButton" name="take Photo" type="button"></button>
-        <button id="toggleFullScreenButton" name="toggle FullScreen" type="button" aria-pressed="false"></button>
+        <div class="line"></div>
+        <div class="question">
+          <div class="subheading">Specifications (if needed):</div>
+          <div class="text"></div>
+        </div>
+      </div>
     </div>
-  </div> 
+    <div style="display: flex; justify-content: center; padding: 20px">
+        <button id="log">ADD TO FOOD LOG</button>
+    </div>
+  </div>
+  </div>
   <script src="js/DetectRTC.min.js"></script>
   <script src="js/adapter.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/4.2.0/screenfull.min.js"></script>
