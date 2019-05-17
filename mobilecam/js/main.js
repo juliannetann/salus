@@ -54,11 +54,13 @@
 var takeSnapshotUI = createClickFeedbackUI();
 
 var video;
+var img;
 var takePhotoButton;
 var toggleFullScreenButton;
 var switchCameraButton;
 var amountOfCameras = 0;
 var currentFacingMode = 'environment';
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -244,28 +246,49 @@ function takeSnapshot() {
     
     // if you'd like to show the canvas add it to the DOM
     var canvas = document.createElement('canvas');
+    var scaledCanvas = document.createElement('canvas')
 
-    var width = video.videoWidth;
-    var height = video.videoHeight;
+    img = document.getElementById("img_overlay")
+    
+    var width = video.offsetWidth;
+    var height = video.offsetHeight;
 
-    canvas.width = 530;
-    canvas.height = 530;
+    console.log(video.offsetWidth,video.offsetHeight)
+    canvas.width = width;
+    canvas.height = height;
+    
+    // console.log(width,height)
+    scaledCanvas.width = 544
+    scaledCanvas.height = 544    
 
+    
+    scaledContext = scaledCanvas.getContext("2d");
+    
     context = canvas.getContext('2d');
-    context.drawImage(video, 0, 0, 530, 530);
 
+    context.drawImage(video,0,0,width,height,0,0,width,height);
+
+    scaledContext.drawImage(video,0,0)
+    // previewContext.drawImage(video, 0, 0, 530, 530);
+    
+    // previewContext.drawImage(video,0,0,width,height)
+    
+    img.src = canvas.toDataURL("image/jpeg")
+    video.style.display = "none"
     // polyfil if needed https://github.com/blueimp/JavaScript-Canvas-to-Blob
     
     // https://developers.google.com/web/fundamentals/primers/promises
     // https://stackoverflow.com/questions/42458849/access-blob-value-outside-of-canvas-toblob-async-function
+    
     function getCanvasBlob(canvas) {
+        
         return new Promise(function(resolve, reject) {
             canvas.toBlob(function(blob) { resolve(blob) }, 'image/jpeg');
         })
     }
 
     // some API's (like Azure Custom Vision) need a blob with image data
-    getCanvasBlob(canvas)
+    getCanvasBlob(scaledCanvas)
     .then(function(blob) {
     //     console.log(URL.createObjectURL(blob))
     //     // do something with the image blob
@@ -295,8 +318,9 @@ function takeSnapshot() {
             
         }
 
-        // delete options.headers["Content-Type"]
         
+        
+        stopCameraSteam()
         return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=`,{
             method: "POST",
             // headers: {
@@ -306,6 +330,8 @@ function takeSnapshot() {
             
 
         })
+
+        
         
     })
     .then(function(response) {
@@ -352,4 +378,14 @@ function createClickFeedbackUI() {
         }   
 
     }
+}
+
+
+function stopCameraSteam() {
+    if (window.stream) {
+        window.stream.getTracks().forEach(function(track) {
+            track.stop();
+        });
+    }
+
 }
