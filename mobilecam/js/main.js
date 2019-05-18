@@ -308,7 +308,7 @@ function takeSnapshot() {
             canvas.toBlob(function(blob) { resolve(blob) }, 'image/jpeg');
         })
     }
-
+    let container = document.getElementById("container")
     // some API's (like Azure Custom Vision) need a blob with image data
     getCanvasBlob(scaledCanvas)
     .then(function(blob) {
@@ -341,10 +341,11 @@ function takeSnapshot() {
         }
 
         let sek
-        
+        sek = "ab4dc23f37455ad57e36eee48e77e644"
         let apiKey = 1 && sek
         stopCameraSteam()
         // window.location.href = "camera_2.html"
+        container.classList.add("loading")
         return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=${apiKey}`,{
             method: "POST",
             // headers: {
@@ -360,10 +361,11 @@ function takeSnapshot() {
         
     })
     .then(function(response) {
+
         return response.json()
     })
     .then(function(data) {
-        let container = document.getElementById("container")
+        
         let main = document.getElementById("main")
         // window.location.replace("./camera_2.html")
         container.style.display = "none"
@@ -373,21 +375,30 @@ function takeSnapshot() {
             <div id="title">YOUR PHOTO:</div>
             <div id="box2">
                 <div class="section">
-                    <div class="question">
-                        <div class="subheading">Please select which type food it is:</div>
-                        <div class="text">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle food_type" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                                </button>
-                      
-                            </div>
-                        </div>
+                    <div class="question" id="choice-section">
+                        <div class="subheading">Please select which type of food it is:</div>
+                        
+                           
+                        <select class="browser-default custom-select dropdown-select-salus" id="group_dropdown">
+                            <option selected>Choose your group:</option>
+                           
+                        </select>
+                        <select class="browser-default custom-select dropdown-select-salus" id="food_dropdown">
+                            
+                           
+                        </select>
+                        <select class="browser-default custom-select dropdown-select-salus" id="serving_dropdown">
+                            
+                           
+                        </select>
+                            
                     </div>
                     <div class="line"></div>
                     <div class="question">
-                    <div class="subheading">Specifications (if needed):</div>
-                    <div class="text"></div>
+                    <div class="subheading">Nutritional Information:</div>
+                    <div class="text list-item" id="nutritional-breakdown">
+
+                    </div>
                 </div>
             </div>
             </div>
@@ -398,6 +409,114 @@ function takeSnapshot() {
 
         main.style.backgroundColor = "#347037"
         console.log(data)
+        let groupDropDown = document.getElementById("group_dropdown")
+        data.results.map( (group,ind) => {
+            let option = document.createElement("option")
+            option.setAttribute("value",group.group)
+            option.innerText=group.group
+
+            groupDropDown.appendChild(option)
+        }
+        )
+        
+        groupDropDown.addEventListener("change", function(event) {
+            let foodDropDown = document.getElementById("food_dropdown")
+            let servingDropDown = document.getElementById("serving_dropdown")
+            let displayInfo = document.getElementById("nutritional-breakdown")
+            displayInfo.innerHTML = ""
+            servingDropDown.innerHTML = ""
+            foodDropDown.innerHTML = ""
+            
+            let baseOption = document.createElement("option")
+            baseOption.selected = true;
+            baseOption.innerText="Choose your food:"
+            
+            foodDropDown.appendChild(baseOption)
+
+            foodDropDown.style.display = "block"
+
+            console.log(event)
+            console.log(data.results)
+            
+            let chosenItem = data.results.filter( food => food.group===event.target.value)[0]
+            
+            chosenItem.items.map( (food,ind) => {
+                let option = document.createElement("option")
+                option.setAttribute("value",food.name)
+                option.innerText=food.name
+    
+                foodDropDown.appendChild(option)
+            } )
+
+            foodDropDown.addEventListener("change", function(event) {
+                displayInfo.innerHTML = ""
+                servingDropDown.innerHTML = ""
+                let baseOptionServing = document.createElement("option")
+                baseOptionServing.selected = true
+                baseOptionServing.innerText="Choose your serving size:"
+                
+                servingDropDown.appendChild(baseOptionServing)
+
+                servingDropDown.style.display = "block"
+
+                
+                let chosenFood = chosenItem.items.filter( food => food.name===event.target.value)[0]
+                let nutritionalContent = chosenFood.nutrition
+                
+                console.log(nutritionalContent)
+                chosenFood.servingSizes.map( (serving,ind) => {
+                    let option = document.createElement("option")
+                    option.setAttribute("value",serving.unit)
+                    option.innerText=serving.unit
+        
+                    servingDropDown.appendChild(option)
+                } )
+
+                servingDropDown.addEventListener("change", function (event) {
+                    displayInfo.innerHTML = ""
+                    let servingObj = chosenFood.servingSizes.filter( serving => serving.unit===event.target.value)[0]
+                    let servingObjWeight = servingObj.servingWeight
+                    let displayNutrition = {}
+                    let keys = Object.keys(nutritionalContent)
+                    console.log(servingObjWeight)
+                    console.log(keys)
+                    console.log(Object.values(nutritionalContent))
+                    let vals = Object.values(nutritionalContent).map( info => {return servingObjWeight ? info*servingObjWeight*1000: info*1000})
+                    console.log(vals)
+
+                    Object.assign(displayNutrition,keys.reduce((obj,key,index) => {
+                        if (key === "calories"){
+                            let accurateVal = vals[index]/1000
+                            parseFloat(accurateVal = accurateVal.toFixed(4))
+                            return {...obj,[key]:accurateVal}
+                        } else {
+                            let accurateVal = vals[index]
+                            parseFloat(accurateVal = accurateVal.toFixed(4))
+                            return {...obj,[key]:vals[index]}
+                        }
+                        
+                    }, {}))
+                    console.log(displayNutrition)
+                    
+                    
+                    Object.keys(displayNutrition).forEach( key => {
+                        
+                        let elem = document.createElement("div")
+                        
+
+                        elem.innerText = `${key}: ${displayNutrition[key]}g`
+
+                        displayInfo.appendChild(elem)
+
+                    
+                    })
+
+
+                })
+            })
+
+        })
+        
     })
     .catch(function(err) {
         console.log(err)
