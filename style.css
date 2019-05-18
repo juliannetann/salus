@@ -222,7 +222,7 @@ body {
     letter-spacing: 5px;
     padding: 20px;
     color: #347037;
-    padding-left: 100px;
+    text-align: center;
 }
 
 #features-pic {
@@ -280,7 +280,7 @@ body {
 } */
 
 
-.class-container-salus .card{
+.card-container-salus .card{
     width: 25rem; 
   
 }
@@ -307,9 +307,10 @@ body {
 
     .container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        /* align-items: center;
+        justify-content: center; */
         /* vertical-align: middle; */
     }
 
@@ -334,6 +335,24 @@ body {
 
     .features-card{
         margin: 50px;
+    }
+
+
+    .card-container-salus .card{
+        width: auto; 
+        margin-bottom: 20px;
+      
+    }
+    
+   
+    
+
+    .card-body{
+        min-height:0;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius:4px;
+    
     }
     
 }
