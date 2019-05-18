@@ -372,7 +372,7 @@ function takeSnapshot() {
         
         main.innerHTML = `
         <div id="box">
-            <div id="title">YOUR PHOTO:</div>
+            <div id="title">PHOTO DETAILS</div>
             <div id="box2">
                 <div class="section">
                     <div class="question" id="choice-section">
@@ -402,10 +402,11 @@ function takeSnapshot() {
                 </div>
             </div>
             </div>
-        <div style="display: flex; justify-content: center; padding: 20px">
-            <button id="log">ADD TO FOOD LOG</button>
-        </div>
-      </div>`
+            <div style="display: flex; justify-content: center; padding: 20px">
+                <button id="log">ADD TO FOOD LOG</button>
+            </div>
+      </div>
+      `
 
         main.style.backgroundColor = "#347037"
         console.log(data)
@@ -487,12 +488,13 @@ function takeSnapshot() {
                     Object.assign(displayNutrition,keys.reduce((obj,key,index) => {
                         if (key === "calories"){
                             let accurateVal = vals[index]/1000
-                            parseFloat(accurateVal = accurateVal.toFixed(4))
+                            accurateVal = parseFloat(accurateVal.toFixed(4))
                             return {...obj,[key]:accurateVal}
                         } else {
                             let accurateVal = vals[index]
-                            parseFloat(accurateVal = accurateVal.toFixed(4))
-                            return {...obj,[key]:vals[index]}
+                            accurateVal = parseFloat(accurateVal.toFixed(4))
+                            accurateVal = accurateVal+"g"
+                            return {...obj,[key]:accurateVal}
                         }
                         
                     }, {}))
@@ -504,7 +506,7 @@ function takeSnapshot() {
                         let elem = document.createElement("div")
                         
 
-                        elem.innerText = `${key}: ${displayNutrition[key]}g`
+                        elem.innerHTML = `<strong>${key}</strong>: ${displayNutrition[key]}`
 
                         displayInfo.appendChild(elem)
 
