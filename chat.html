@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salus Chatbot</title>
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
+    
+</head>
+<body>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js" integrity="sha256-WRc/eG3R84AverJv0zmqxAmdwQxstUpqkiE+avJ3WSo=" crossorigin="anonymous"></script>
+    <!-- include the loader library script -->
+<script src="./lex-web-ui-loader.js"></script>
+<!-- LexWebUi loader -->
+
+<!--
+  Loader script creates a global variable named ChatbotUiLoader.
+-->
+<script>
+        // loader options control how the loader obtains the config and
+        // dependencies. It can be optionally passed as an argument to the
+        // FullPageLoader constructor to override the defaults
+        var loaderOptions = {
+          shouldLoadConfigFromMobileHubFile: false,
+          configUrl: './lex-web-ui-loader-config.json'
+        };
+    
+        // instantiate the loader
+        var lexWebUiLoader = new ChatBotUiLoader.FullPageLoader(loaderOptions);
+    
+        // this config is used to pass run-time configuration to the chatbot UI
+        // as an argument to the load() function. The config passed through
+        // load() is merged with the config from other sources and overrides
+        // their values
+        var chatbotUiconfig = {
+         cognito: {
+           poolId: 'us-east-1:0058b554-df7c-4fad-b48d-8af43ffd03bd'
+         },
+         lex: {
+            initialText: 'How can I help you?',
+            botName: 'BookTrip'
+          },
+          ui: {
+            toolbarTitle: 'Your Personal Nutritionist',
+            toolbarLogo: ''
+          },
+        };
+        // You can pass the config as a parameter.
+        // The loader can also get its config dynamically
+        // from a JSON file or from the Mobile Hub config script
+        lexWebUiLoader.load(chatbotUiconfig)
+          // returns a promise that is resolved once the chatbot UI is loaded
+          .then(function () {
+            
+            
+            console.log('chatbot UI loaded');
+          })
+          .catch(function (error) {
+            console.error('chatbot UI failed to load', error);
+          });
+       </script>
+      
+ 
+</body>
+</html>

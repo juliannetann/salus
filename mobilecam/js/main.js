@@ -25,18 +25,23 @@
         // })
 
 // var albumBucketName = 'test-camera-app';
-// var bucketRegion = 'us-east-1';
-// var IdentityPoolId = 'us-east-1:dd7eed13-39e5-4e67-ad47-ab7a04630936';
+var bucketRegion = 'us-east-1';
+var IdentityPoolId = 'us-east-1:0058b554-df7c-4fad-b48d-8af43ffd03bd';
 
-// AWS.config.update({
-//   region: bucketRegion,
-//   credentials: new AWS.CognitoIdentityCredentials({
-//     IdentityPoolId: IdentityPoolId
-//   })
-// });
+AWS.config.update({
+  region: bucketRegion,
+  credentials: new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: IdentityPoolId
+  })
+});
 
 
+var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 
+dynamodb.batchGetItem(params, function (err, data) {
+  if (err) console.log(err, err.stack); // an error occurred
+  else     console.log(data);           // successful response
+});
 // var s3 = new AWS.S3({
 //   apiVersion: '2006-03-01',
 //   params: {Bucket: albumBucketName}
