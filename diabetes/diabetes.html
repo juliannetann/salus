@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="diabetes.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#" id="navbar-name">SALUS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#" id="home"><b>Home</b><span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#" id="Diabetic">Diabetic</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle nav-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Features
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Calorie Tracker</a></li>
+                        <li><a class="dropdown-item" href="#">Meal Plan</a></li>
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <li class="dropdown-submenu">
+                            <div class="btn-group dropright" href="#">
+                                <button type="button" class="btn btn-secondary" id="suggestions">
+                                  Suggestions
+                                </button>
+                                
+                                <button type="button" id="toggle-dropright" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="sr-only">Toggle Dropright</span>
+                                </button>
+                            </div>
+                                <ul class="dropdown-menu" >
+
+                                    <li><a class="dropright-item" href="#">foods</a></li>
+                                    <li><a class="dropright-item" href="#">sports</a></li>
+                                </ul>
+                              
+                        </li>
+                        
+                    </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link disabled nav-header" href="#" id="disabled">Disabled</a>
+                    </li> -->
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="login">Log in</button>
+                  </form>
+                </div>
+              </nav>
+              
+              <div class="jumbotron">
+                <h1 class="display-4" id="gph1">Diabetics</h1>
+              </div>
+
+              <div id="information">
+                  <div id="public-health">
+                      <h2>Diabetes in Singapore</h2>
+                      <p>Diabetes is becoming more and more common, accounting for 10% of all diseases 
+                        in Singapore. People are becoming more sedentary and they have more sugar in their
+                        diets, so many people are at the risk of diabetes. We need to reduce the Diabetic
+                        population in Singapore.
+                      </p>
+                  </div>
+                  <div id="public-features">
+                      <h2>How our features support their health</h2>
+                      <p> Salus can recommend healthier food for the diabetics
+                          that have less sugar in them, so that the diabetics' condition
+                          does not worsen. If the diabetic people have too
+                          much sugar in their diet, Salus can warn them to cut
+                          down on sugar and suggest healthier alternatives.
+                          Salus can also remind the diabetics to take their
+                          medication such as insulin.
+                      </p>
+                  </div>
+              </div>
+
+    </div>
+    
+
+
+    <div id="lined-border"></div>
+
+<script src="generalpublic.js"></script> 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

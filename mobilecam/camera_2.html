@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Smart Device Camera Template for HTML, CSS, JS and WebRTC">
+  <meta name="keywords" content="HTML,CSS,JavaScript, WebRTC, Camera">
+  <meta name="author" content="Kasper Kamperman">
+  <title>Salus Camera</title>
+  <link rel="stylesheet" type="text/css" href="style_camera2.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+</head>
+<body style="margin: 0px">
+  <div id="main">
+  <div id="box">
+    <div id="title">YOUR PHOTO:</div>
+    <div id="box2">
+      <div class="section">
+        <div class="question">
+          <div class="subheading">Please select which type food it is:</div>
+          <div class="text">
+              <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle food_type" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">---</a>
+                    <a class="dropdown-item" href="#">---</a>
+                    <a class="dropdown-item" href="#">---</a>
+                  </div>
+                </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="question">
+          <div class="subheading">Specifications (if needed):</div>
+          <div class="text"></div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center; padding: 20px">
+        <button id="log">ADD TO FOOD LOG</button>
+    </div>
+  </div>
+  </div>
+  <script src="js/DetectRTC.min.js"></script>
+  <script src="js/adapter.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/4.2.0/screenfull.min.js"></script>
+  <script src="js/howler.core.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

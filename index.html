@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
@@ -73,15 +74,15 @@
 
                   <div class="carousel-inner">
                     <div class="carousel-item active text-center">
-                        <img src="first-pic.png" id="healthy-food" alt="">
+                        <img src="./homepage_assets/first-pic.png" id="healthy-food" alt="">
                     </div>
                     <div class="carousel-item">
-                            <img src="https://engie.com.au/wp-content/uploads/slider-51_1440x500-1.jpg" id="tai-chi-in-the-park" alt="tai chi in the park">
+                            <img src="https://engie.com.au/wp-content/uploads/slider-51_1440x500-1.jpg" id="tai-chi-in-the-park" alt="tai chi in the park" >
                     </div>
                     <div class="carousel-item">
                         <img src="https://biztechmagazine.com/sites/biztechmagazine.com/files/styles/cdw_hero/public/articles/201811/GettyImages-649618834.jpg?itok=ufEXnib7" id="" alt="">
                     </div>
-                    <div class="centered" id="salus-centre">SALUS</div>
+                    <div class="centered" id="salus-centre" margin-botoo>SALUS</div>
                     <div class="centered" id="description-salus">An A.I. empowered mobile nutritionist</div>
                   </div>
                   <a href="#demo" data-slide="prev" class="carousel-control-prev">
@@ -97,75 +98,84 @@
     <div class="lined-border"></div>
     <div id="description-home">SERVES THE:</div>
     <div class="container">
-    <div style="display: inline">
-        <div class="card" style="width: 25rem; margin-left: 100px" style="display: inline">
-            <img class="card-img-top" id="general-public" src="general-public-icon.png" alt="Card image cap" style="margin-top: 15px; margin-bottom: 15px; width: 200px; height:200px">
+    <div class="card-container-salus">
+        <div class="card card-1">
+            <img class="card-img-top" id="general-public" src="./homepage_assets/general-public-icon.png" alt="Card image cap" style="margin-top: 15px; margin-bottom: 15px; width: 200px; height:200px">
             <div class="card-body d-flex flex-column">
             <h5 class="card-title" style="color: #347037; letter-spacing: 3px">General Public</h5>
             <p class="card-text">People who are looking to lead healthier lives would be helped if they are privy to the calories and nutrition of foods they consume daily. The conventional ways of getting this information often rely on nutritional labels or pure guesswork. This can be tedious and often misleading due to the lack of transparency with most food options.</p>
-            <a href="generalpublic.html" class="btn btn-primary more mt-auto" id="general-btn">More</a>
+            <a href="./general-public/generalpublic.html" class="btn btn-primary more mt-auto" id="general-btn">More</a>
             </div>
         </div>
     </div> 
-    <div style="display: inline">
-        <div class="card" style="width: 25rem;" style="display: inline">
-            <img class="card-img-top" id="elderly" src="elderly icon.png" alt="Card image cap" style="margin-top: 15px; margin-bottom: 15px; width: 200px; height:200px">
+    <div class="card-container-salus">
+        <div class="card">
+            <img class="card-img-top" id="elderly" src="./homepage_assets/elderly icon.png" alt="Card image cap" style="margin-top: 15px; margin-bottom: 15px; width: 200px; height:200px">
 
 
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title" style="color: #347037; letter-spacing: 3px">Elderly</h5>
                 <p class="card-text">It is often the case with elderly people to forget when or if they have taken their medication. This could potentially lead to dire situations as they can either retake their medicine which can result in an overdose, or not take their medicine at all and risk falling sick. Elderly people may also have varying conditions which necessitate specific diets for them to stay healthy, making it all the more important for them to know the nutrition of foods they consume. </p>
-                <a href="elderly.html" class="btn btn-primary more mt-auto">More</a>
+                <a href="./elderly/elderly.html" class="btn btn-primary more mt-auto">More</a>
             </div>
         </div>
     </div>   
-    <div style="display: inline">
-            <div class="card" style="width: 25rem; margin-right: 100px" style="display: inline">
-                <img class="card-img-top;" id="diabetic" src="first-pic.png" alt="Card image cap" style="margin-top: 15px; margin-bottom: 15px; width: 200px; height:200px">
+    <div class="card-container-salus">
+            <div class="card card-3" >
+                <img class="card-img-top;" id="diabetic" src="./homepage_assets/first-pic.png" alt="Card image cap" style="margin-top: 15px; margin-bottom: 15px; width: 200px; height:200px">
 
 
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title" style="color: #347037; letter-spacing: 3px">Diabetic People</h5>
                     <p class="card-text">Around 1 in 9 Singaporeans suffer from diabetes, and we are in urgent need of mitigating said issue. Diabetic people tend to struggle to find appropriate foods to eat as it is hard for them to know the sugar content in foods they consume - especially when food served in restaurants and cafes do not have nutrition labels. </p>
-                    <a href="diabetes.html" class="btn btn-primary more mt-auto" >More</a>
+                    <a href="./diabetes/diabetes.html" class="btn btn-primary more mt-auto" >More</a>
                 </div>
             </div>
         </div>   
     </div>
     <div class="lined-border"></div>
-    <div class="purpose-box">
-            <h1 class="purpose">OUR MISSION</h1>
-            <div class="lined-border2"></div>
-        <div class="sections">
-            <div class="purpose-body">Salus addresses two issues in Singapore, an ageing population and diabetes. Diabetes is becoming more and more common, accounting for 10% of all diseases in Singapore. People are becoming increasingly sedentary. Leading a healthy lifestyle has never been more important. With the help of Salus, making decisions to lead a better and healthier lifestyle will be made easier.</div>
-            <img id="cafe-pic" src="cafe-photo-mission.jpg" alt="cafe-photo-mission">
+<div class="features">
+    
+    <div class="sections">
+        <img id="features-pic" src="./homepage_assets/track.jpg" alt="features picture">
+        <div id="features-text"></div>
+    </div>
+    <h1 id="features-header">FEATURES</h1>
+    <div id="features-people">
+        <div class="features-card" display = "flex">
+            <div class="features-people-header">GENERAL PUBLIC</div>
+            <div>
+                <div class="features-people-subheading">CALORIE TRACKER</div>
+                <div class="features-people-text">Take a picture of any food to identify the food, display nutritional information and record it into a food log to plan a meal plan for the user.</div>
+            </div>
+            <div>
+                <div class="features-people-subheading">FOOD SUGGESTIONS</div>
+                <div class="features-people-text">Recommends healthier food options based on the user's medical record and preferences from a chatbot!</div>
+            </div>
+            <div>
+                <div class="features-people-subheading">SPORTS SUGGESTIONS</div>
+                <div class="features-people-text">Suggests physical activities at a level appropriate to the user's medical history and calorie intake to maintain good health (based on recommended guidelines).</div>
+            </div>    
+        </div>
+        <div class="features-card">
+            <div class="features-people-header">ELDERLY</div>
+                <div class="features-people-subheading">VOCAL REMINDERS</div>
+                <div class="features-people-text">Salus is built with accessibility in mind. It features voice enabled queries with Amazon Lex to improve user experience for elderly users. Users are also able to set reminders via the chatbot to check if one has taken medicine at the appropriate time.</div>
+        </div>
+        <div class="features-card">
+            <div class="features-people-header">DIABETIC</div>
+            <div>
+                <div class="features-people-subheading">CUSTOMISED QUERIES</div>
+                <div class="features-people-text">Salus features customisation specific towards diabetic users. Suggestion for foods are carefully curated to diabetic-friendly foods, and warnings are given when sugar intake exceeds the recommended level. Salus’ chatbot also includes expert knowledge about the types of sugars and the quantities appropriate for the user's consumption.</div>
+            </div>
         </div>
     </div>
-    <div class="lined-border"></div> 
-    <div class="features">
-        <h1 id="features-header">FEATURES</h1>
-        <div class="sections">
-            <img id="features-pic" src="" alt="features picture">
-            <div id="features-text"></div>
-        </div>
-        <div id="features-people">
-            <div class="features-card">
-                <div class="features-people-header">General Public</div>
-                <div class="features-people-text"></div>
-            </div>
-            <div class="features-card">
-                <div class="features-people-header">Elderly</div>
-                <div class="features-people-text"></div>
-            </div>
-            <div class="features-card">
-                <div class="features-people-header">Diabetic</div>
-                <div class="features-people-text"></div>
-            </div>
-        </div>
-    </div>
+</div>
+
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
 </body>
 </html>

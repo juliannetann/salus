@@ -1,14 +1,23 @@
 
-/* html, body {
-    height: 100%;
+html {
     width: 100%;
+    height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden;
-} */
+    overflow-x: hidden; 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 
 .navbar {
-    background-color: #347037
+    background-color: #347037;
+    width: 100%;
 }
 
 #navbar-name {
@@ -52,7 +61,8 @@
 }
 
 #healthy-food {
-    height: 500px
+    width:50%;
+    height:auto;   
 }
 
 #salus {
@@ -69,6 +79,7 @@
     letter-spacing: 30px;
     font-size: 150px;
     text-shadow: 5px 5px 10px black;
+
 }
 
 #description-salus {
@@ -95,9 +106,7 @@
     letter-spacing: 1px;
     margin-left: 20px;
     margin-right: 20px;
-    display: inline;
-
-    
+    display: inline
     
 }
 
@@ -113,6 +122,7 @@
     margin-bottom: 15px
     
 }
+
 
 #general-public {
     width: 20rem;
@@ -172,11 +182,18 @@
     line-height: 40px
 }
 
+.container{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .more {
     width: 6cm;
     top: -10%;
     left: -30%;
     transform: translate(30%, 10%);
+    color: #347037
 }
 
 .sections {
@@ -205,15 +222,148 @@
     letter-spacing: 5px;
     padding: 20px;
     color: #347037;
-    padding-left: 100px
+    text-align: center;
+}
+
+#features-pic {
+    padding-bottom: 40px;
+    width: 100%;
+    height: 20%;
 }
 
 #features-people {
-    display: flex; justify-content: space-around
-}
-
-.container{
     display: flex; 
     justify-content: space-around;
 }
 
+.features-people-header {
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 30px
+}
+
+.features-people-subheading {
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px
+}
+
+.features-people-text {
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.features-card {
+    width: 10cm;
+    background-color: #347037;
+    color: white
+}
+
+.carousel-inner img {
+    object-fit: cover;
+    width: 100%;
+    max-height:250px;
+    
+}
+
+/* .class-container-salus{
+    width: 25rem;
+    margin-left: 100px;
+} */
+
+
+.card-container-salus .card{
+    width: 25rem; 
+  
+}
+
+.card-1{
+    margin-left:100px;
+}
+
+
+.card-3{
+    margin-right:100px;
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width: 576px) { 
+    #demo {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    #salus-centre {
+        font-size: 50px;
+    }
+
+    .container {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        /* align-items: center;
+        justify-content: center; */
+        /* vertical-align: middle; */
+    }
+
+
+    /* .class-container-salus .card{
+        width: 25rem; 
+        margin-right:100px;
+        display:flex;
+        justify-content: center;
+    } */
+    .sections {
+        width: 100%;
+        max-height: 100px;
+    }
+
+    #features-people {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; 
+    }
+
+    .features-card{
+        margin: 50px;
+    }
+
+
+    .card-container-salus .card{
+        width: auto; 
+        margin-bottom: 20px;
+      
+    }
+    
+   
+    
+
+    .card-body{
+        min-height:0;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius:4px;
+    
+    }
+    
+}
+
+/*
+
+ /* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) { }
+
+/* // Large devices (desktops, 992px and up) */
+@media screen and (max-width: 992px) { }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width: 1200px) {} */
