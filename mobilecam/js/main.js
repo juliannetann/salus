@@ -243,19 +243,24 @@ function initCameraStream() {
 }
 
 function takeSnapshot() {
-    
+    function calculateProportionalAspectRatio(srcWidth, srcHeight, maxWidth, maxHeight) {
+        return(Math.min(maxWidth / srcWidth, maxHeight / srcHeight));
+    }
+
     // if you'd like to show the canvas add it to the DOM
     var canvas = document.createElement('canvas');
     var scaledCanvas = document.createElement('canvas')
 
     img = document.getElementById("img_overlay")
     
-    var width = video.offsetWidth;
-    var height = video.offsetHeight;
+    var width = video.videoWidth;
+    var height = video.videoHeight;
 
-    console.log(video.offsetWidth,video.offsetHeight)
-    canvas.width = width;
-    canvas.height = height;
+    var videoScreenWidth = video.offsetWidth
+    var videoScreenHeight = video.offsetHeight
+    // console.log(video.offsetWidth,video.offsetHeight)
+    canvas.width = videoScreenWidth;
+    canvas.height = videoScreenHeight;
     
     // console.log(width,height)
     scaledCanvas.width = 544
@@ -265,21 +270,38 @@ function takeSnapshot() {
     scaledContext = scaledCanvas.getContext("2d");
     
     context = canvas.getContext('2d');
+    // var ratio=calculateProportionalAspectRatio(video.width,video.height,canvas.width,canvas.height)
+    // console.log(video.width,video.height,canvas.width,canvas.height);
 
-    context.drawImage(video,0,0,width,height,0,0,width,height);
+    
+
+
+
+    // context.drawImage(video,0,0,video.width*ratio,video.height*ratio);
+
+    context.drawImage(video,0,0,canvas.width,canvas.height);
 
     scaledContext.drawImage(video,0,0)
     // previewContext.drawImage(video, 0, 0, 530, 530);
     
     // previewContext.drawImage(video,0,0,width,height)
     
+
     img.src = canvas.toDataURL("image/jpeg")
     video.style.display = "none"
+
+    
+    
+ 
     // polyfil if needed https://github.com/blueimp/JavaScript-Canvas-to-Blob
     
     // https://developers.google.com/web/fundamentals/primers/promises
     // https://stackoverflow.com/questions/42458849/access-blob-value-outside-of-canvas-toblob-async-function
     
+
+
+
+
     function getCanvasBlob(canvas) {
         
         return new Promise(function(resolve, reject) {
@@ -318,10 +340,12 @@ function takeSnapshot() {
             
         }
 
+        let sek
         
-        
+        let apiKey = 1 && sek
         stopCameraSteam()
-        return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=`,{
+        // window.location.href = "camera_2.html"
+        return fetch(`https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=${apiKey}`,{
             method: "POST",
             // headers: {
             //     "Content-Type": "multipart/form-data",
@@ -333,11 +357,46 @@ function takeSnapshot() {
 
         
         
+        
     })
     .then(function(response) {
         return response.json()
     })
     .then(function(data) {
+        let container = document.getElementById("container")
+        let main = document.getElementById("main")
+        // window.location.replace("./camera_2.html")
+        container.style.display = "none"
+        
+        main.innerHTML = `
+        <div id="box">
+            <div id="title">YOUR PHOTO:</div>
+            <div id="box2">
+                <div class="section">
+                    <div class="question">
+                        <div class="subheading">Please select which type food it is:</div>
+                        <div class="text">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle food_type" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                                </button>
+                      
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="question">
+                    <div class="subheading">Specifications (if needed):</div>
+                    <div class="text"></div>
+                </div>
+            </div>
+            </div>
+        <div style="display: flex; justify-content: center; padding: 20px">
+            <button id="log">ADD TO FOOD LOG</button>
+        </div>
+      </div>`
+
+        main.style.backgroundColor = "#347037"
         console.log(data)
     })
     .catch(function(err) {

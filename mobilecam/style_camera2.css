@@ -137,6 +137,84 @@ button {
         top: calc(50% - 32px);
     }
 
+
+
+    #main {
+        background-color: #347037;
+        height:100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+        font-family: "Open Sans", 'Baloo Bhai', cursive;
+        color: #347037;
+    }
+
+    #box {
+        width: 90%;
+        height:90%;
+        margin: auto;
+        background-color: white
+    }
+
+    #box2 {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    #title {
+        font-size: 70px;
+        letter-spacing: 20px;
+        text-align: center;
+        padding-top: 20px
+    }
+
+
+    .subheading {
+        font-size: 20px;
+        letter-spacing: 5px;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        vertical-align: top
+    }
+
+    .section {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-right: 10%
+    }
+
+    .line {
+        border-left: 6px solid green;
+        height: 400px;
+    }
+
+    .text {
+        vertical-align: top ;
+        padding-left: 50px;
+        letter-spacing: 3px
+    }
+
+    #log {
+        background-color: #347037;
+        width: 30%;
+        height: 10%;
+        font-size: 20px;
+        letter-spacing: 3px
+        
+    }
+
+    .food_type {
+        background: #347037;
+        color: white;
+        font-size: 4cm
+    }
    
 }
 
@@ -182,6 +260,7 @@ button {
         left: calc(50% - 32px);
         top: calc(82% - 32px);
     }
+
 
     #main {
         background-color: #347037;
