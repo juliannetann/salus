@@ -25,8 +25,8 @@
         // })
 
 // var albumBucketName = 'test-camera-app';
-var bucketRegion = 'us-east-1';
-var IdentityPoolId = 'us-east-1:0058b554-df7c-4fad-b48d-8af43ffd03bd';
+var bucketRegion = '';
+var IdentityPoolId = '';
 
 AWS.config.update({
   region: bucketRegion,
@@ -346,7 +346,7 @@ function takeSnapshot() {
         }
 
         let sek
-        sek = "ab4dc23f37455ad57e36eee48e77e644"
+        sek = ""
         let apiKey = 1 && sek
         stopCameraSteam()
         // window.location.href = "camera_2.html"

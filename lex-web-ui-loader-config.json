@@ -1,6 +1,6 @@
 {
     "cognito": {
-      "poolId": "us-east-1:0058b554-df7c-4fad-b48d-8af43ffd03bd",
+      "poolId": "",
       "appUserPoolClientId": "",
       "appUserPoolName": "",
       "appDomainName": "",
