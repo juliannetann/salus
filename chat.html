@@ -39,7 +39,7 @@
          },
          lex: {
             initialText: 'How can I help you?',
-            botName: 'BookTrip'
+            botName: 'SalusBot'
           },
           ui: {
             toolbarTitle: 'Your Personal Nutritionist',
@@ -55,6 +55,11 @@
             
             
             console.log('chatbot UI loaded');
+          }).then(function (){
+            let webUI = document.getElementById("lex-web-ui")
+            let navbar = webUI.getElementsByTagName("nav")[0]
+            navbar.classList.remove("red")
+            navbar.classList.add("green")
           })
           .catch(function (error) {
             console.error('chatbot UI failed to load', error);

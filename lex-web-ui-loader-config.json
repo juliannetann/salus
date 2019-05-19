@@ -7,15 +7,15 @@
       "appUserPoolIdentityProvider": ""
     },
     "lex": {
-      "botName": "OrderFlowers",
+      "botName": "SalusBot",
       "botAlias": "$LATEST",
-      "initialText": "You can ask me for help ordering flowers. Just type \"Buy flowers\" or click on the mic and say it.",
-      "initialSpeechInstruction": "Say 'Buy Flowers' to get started.",
+      "initialText": "You can ask me for help for nutritional information and recommendations. Just type \"Recommend food\" or click on the mic and say it.",
+      "initialSpeechInstruction": "Say 'Recommend Food' to get started.",
       "reInitSessionAttributesOnRestart": false
     },
     "ui": {
       "parentOrigin": "",
-      "toolbarTitle": "Order Flowers",
+      "toolbarTitle": "Nutritionist",
       "toolbarLogo": "",
       "enableLogin": false,
       "AllowSuperDangerousHTMLInMessage": false,
